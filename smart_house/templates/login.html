@@ -7,6 +7,7 @@
 </head>
 
 <h1 class="caption"> Ваш умный дом</h1>
+
 <p>
 
     <label for="login">Логин:</label><br />
@@ -16,9 +17,10 @@
 <button class="button" id="processing">Вход</button>
     <!--<script type="text/javascript" src="index.js"></script>-->
     <!--<script src="{% static "js/index.js" %}"></script>-->
-    <script type="text/javascript" src="{% static "js/index.js" %}"></script>
+    {% csrf_token %}
+    <script type="text/javascript" src="{% static "login.js" %}"></script>
 
-<br />
 </p>
+
 </html>
 

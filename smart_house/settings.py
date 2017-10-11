@@ -15,7 +15,9 @@ SECRET_KEY = 't=$(28k_ikschc-!n^#t(y&4f9lmf!za^o&1jz050fwv81!!j0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.5"]
+ALLOWED_HOSTS = ["127.0.0.6"]
+
+
 
 
 # Application definition
@@ -28,6 +30,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'db_model',
+    'socket_dj',
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -112,13 +116,23 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "smart_house/static/"),
+    os.path.join(BASE_DIR, "smart_house/static/js/"),
+    os.path.join(BASE_DIR, "index/smart_house/static/js/"),
+
 ]
 
-STATIC_ROOT = 'smart_house/static/'
-STATIC_URL = 'smart_house/static/'
+STATIC_ROOT = ''
+STATIC_URL = 'smart_house/static/js/'
 
 STATICFILES_FINDERS=[
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 ]
+
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "asgiref.inmemory.ChannelLayer",
+        "ROUTING": "smart_house.routing.channel_routing",
+    },
+}
