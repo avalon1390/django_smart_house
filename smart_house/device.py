@@ -1,5 +1,5 @@
 import random
-from db_model.models import Users, Device_spec, Devices, Indication
+from db_model.models import Device_spec, Indication
 import datetime
 
 

@@ -15,8 +15,6 @@
     <label for="password">Пароль:</label><br />
     <input type="text" size="10" name="password" id="password" title="Введите пароль в цифровом формате"><br />
 <button class="button" id="processing">Вход</button>
-    <!--<script type="text/javascript" src="index.js"></script>-->
-    <!--<script src="{% static "js/index.js" %}"></script>-->
     {% csrf_token %}
     <script type="text/javascript" src="{% static "login.js" %}"></script>
 

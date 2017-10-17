@@ -1,6 +1,6 @@
 from django.db import models
 
-# Create your models here.
+# BD models for creating tables in Postgres.
 
 class Users(models.Model):
     login = models.CharField(max_length=15, primary_key=True)
