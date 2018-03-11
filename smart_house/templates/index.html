@@ -1,0 +1,17 @@
+<!doctype html>
+{% load static  from staticfiles %}
+<html lang="en">
+<head>
+  <title>Intelligence home</title>
+
+</head>
+<p>
+    <h1>Добрый день {{user.nickname}}!</h1>
+    <div id="root"></div>
+    <div id="result"></div>
+    {% csrf_token %}
+    <script type="text/javascript" src="{% static "main.js" %}"></script>
+
+</p>
+</html>
+
